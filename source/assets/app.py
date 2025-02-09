@@ -11,7 +11,7 @@ from flask_ckeditor import CKEditor
 
 
 app = Flask(__name__)
-app.secret_key = 'dev key'
+app.secret_key = os.getenv('SECRET_KEY', 'secret string')
 
 assets = Environment(app)
 ckeditor = CKEditor(app)
